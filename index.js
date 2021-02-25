@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const path = require('path'); //may not be needed - Manoli notes had it so I added to be safe
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -28,7 +30,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What short of license should your project have?',
-        choices: ['Apache License 2.0', 'GNU General Public License 3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense']
+        choices: ['Apache License 2.0', 'GNU General Public License 3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense', 'None']
     },
     {
         type: 'input',
@@ -55,34 +57,17 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    `
-    # ${questions.project}
-
-    ## Description
-    ``` `${questions.description}` ```
-
-    ## Installation
-    ``` `${questions.dependencies}` ```
-
-    ## Usage
-    ``` `${questions.repoUse}` ```
-
-    ## Contributing
-    ``` `${questions.contribute}` ```
-
-    ## Tests
-    ``` `${questions.tests}` ```
-
-    `
+   return fs.writeFileSynth(path.join(process.cwd(), fileName), data);
  }
+ 
 
 // TODO: Create a function to initialize app
 function init() { 
     inquirer.prompt(questions)
-    .then((answers) => {
-        const readMeContent = writeToFile(answers);
+    .then((inquirerResponses) => {
+        // const readMeContent = writeToFile(answers);
 
-        fs.writeFile('readme.md', readMeContent, (err) =>
+        fs.writeFile('readme.md', generateMarkdown({...inquirerResponses}), (err) =>
         err ? console.log(err) : console.log('Successfully created readme.md!')
         );
     })
