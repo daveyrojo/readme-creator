@@ -54,10 +54,39 @@ const questions = [
     ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) {
+    `
+    # ${questions.project}
+
+    ## Description
+    ``` `${questions.description}` ```
+
+    ## Installation
+    ``` `${questions.dependencies}` ```
+
+    ## Usage
+    ``` `${questions.repoUse}` ```
+
+    ## Contributing
+    ``` `${questions.contribute}` ```
+
+    ## Tests
+    ``` `${questions.tests}` ```
+
+    `
+ }
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() { 
+    inquirer.prompt(questions)
+    .then((answers) => {
+        const readMeContent = writeToFile(answers);
+
+        fs.writeFile('readme.md', readMeContent, (err) =>
+        err ? console.log(err) : console.log('Successfully created readme.md!')
+        );
+    })
+}
 
 // Function call to initialize app
 init();
