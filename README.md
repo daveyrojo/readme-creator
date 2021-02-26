@@ -1,15 +1,15 @@
 
-[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-# Dave's Project
+# Dave"s Project
 
 ## Description
 
-Awesome times goe here!
+undefined
    
 ## Installation
 
-inquirer
+none
 
 ## Usage
 fork
@@ -21,4 +21,5 @@ have fun!
 npm 
 ## Questions
 d.vincenteldridge@gmail.com
-[daveyrojo]gitHubUrl
+
+[daveyrojo](https://github.com/daveyrojo)

@@ -40,7 +40,7 @@ const questions = [
             },
             { 
             name: 'BSD 3-Clause',
-            value: '[![License](https://img.shields.io/badge License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
+            value: '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
             },
             { 
             name: 'Boost Software License 1.0',

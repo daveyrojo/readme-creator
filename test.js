@@ -3,11 +3,11 @@ const path = require('path');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 var mockResponses = {
-    github: 'daveyrjo',
+    github: 'daveyrojo',
     email: 'd.vincenteldridge@gmail.com',
     project: 'Dave"s Project',
     descirption: 'Project stuff!',
-    license: "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
+    license: "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
     dependencies: 'none',
     tests: 'npm',
     repoUse: 'fork',

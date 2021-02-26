@@ -45,7 +45,7 @@
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const gitHubUrl = `(https://github.com/${data.gitHub})`
+  const gitHubUrl = `https://github.com/`
   const markdown = `
 ${data.license}
 
@@ -68,8 +68,8 @@ ${data.contribute}
 ## Tests
 ${data.tests} 
 ## Questions
-${data.email}
-[${data.github}]gitHubUrl`;
+${data.email}\n
+[${data.github}](${gitHubUrl}${data.github})`;
   
   return markdown
 }
