@@ -51,6 +51,19 @@ ${data.license}
 
 # ${data.project}
 
+## Table of Contents
+1.) [Description](#Description)
+\n
+2.) [Installation](#Installation)
+\n
+3.) [Usage](#Usage)
+\n
+4.) [Contributing](#Contributing)
+\n
+5.) [Tests](#Tests)
+\n
+6.) [Questions](#Questions)
+
 ## Description
 
 ${data.description}
@@ -67,9 +80,10 @@ ${data.contribute}
 
 ## Tests
 ${data.tests} 
+
 ## Questions
-${data.email}\n
-[${data.github}](${gitHubUrl}${data.github})`;
+Email: ${data.email}\n
+GitHub: [${data.github}](${gitHubUrl}${data.github})`;
   
   return markdown
 }
