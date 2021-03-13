@@ -79,15 +79,18 @@ function writeToFile(fileName, data) {
  
 
 // TODO: Create a function to initialize app
-function init() { 
-    inquirer.prompt(questions)
-    .then((inquirerResponses) => {
+const init = async () => { 
+    const inquirerResponses = await  inquirer.prompt(questions)
+
+
+    //.then((inquirerResponses) => {
         // const readMeContent = writeToFile(answers);
 
         fs.writeFile('readme.md', generateMarkdown({...inquirerResponses}), (err) =>
         err ? console.log(err) : console.log('Successfully created readme.md!')
         );
-    })
+
+   // })
 }
 
 // Function call to initialize app
